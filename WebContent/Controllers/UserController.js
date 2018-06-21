@@ -16,6 +16,7 @@ app.controller('UserCtrl',function($scope,UserService,$location,$rootScope,$cook
 	}
 	
 	$scope.login=function(user){
+		console.log(user)
 		UserService.login(user).then(function(response){
 			//response.data ={email:"...",firstname:"..",lastname:"...",}
 			$rootScope.loggedInUser=response.data //loggedin User object
@@ -23,6 +24,7 @@ app.controller('UserCtrl',function($scope,UserService,$location,$rootScope,$cook
 			$location.path('/home')
 		},function(response){
 			$scope.error=response.data
+			console.log(response.data)
 		})
 	}
 	

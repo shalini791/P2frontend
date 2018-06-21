@@ -23,6 +23,15 @@ app.config(function($routeProvider){
 		controller:'JobCtrl',
 		templateUrl:'views/jobform.html' 
 	})
+	
+	.when('/activejobs',{ //C to V,  $scope.activeJobs=[{},{}]
+		controller:'JobCtrl',
+		templateUrl:'views/activejobslist.html'
+	})
+	.when('/inactivejobs',{
+		controller:'JobCtrl',
+		templateUrl:'views/inactivejobslist.html'
+	})
 	.otherwise({
 		templateUrl:'views/home.html'
 	})
