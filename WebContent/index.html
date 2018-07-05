@@ -41,12 +41,32 @@
 				<li><a href="#/activejobs">Get Jobs</a></li>
 				<li><a href="#/inactivejobs" ng-show="loggedInUser.role=='ADMIN'">Inactive jobs</a>		
 			</ul></li>
+			
+			<li class="dropdown"><a href="" class="dropdown-toggle"
+		data-toggle="dropdown" ng-show="loggedInUser.firstname!=undefined">Blog<b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a href="#/addblog">Post Blog</a></li>
+				<li><a href="#/blogsapproved">All Blogs</a></li>
+				<li><a href="#/blogsWaitingforapproval" ng-show="loggedInUser.role=='ADMIN'">Blogs waiting For Approval</a>		
+		     </ul></li>
+
+<li class="dropdown"><a href="" class="dropdown-toggle"
+		data-toggle="dropdown" ng-show="loggedInUser.firstname!=undefined">Friend<b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a href="#/suggestedusers">Friend Suggestion</a></li>
+				<li><a href="#/pendingrequests">Pending Request</a></li>
+				<li><a href="#/friend">Friends</a></li>	
+		     </ul></li>
 
         
-           <li><a href="#/updateprofile" ng-show="loggedInUser.firstname!=undefined">Welcome {{loggedInUser.firstname}} &nbsp; {{loggedInUser.lastname}}</a></li>
-           <li><a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined">Sign out</a></li>
-           <li><a href="#/registration" ng-show="loggedInUser.firstname==undefined">Sign Up</a></li>
+          <li><a href="#/updateprofile" ng-show="loggedInUser.firstname!=undefined">Welcome {{loggedInUser.firstname}} &nbsp; {{loggedInUser.lastname}}</a></li>
+          <li><a href="#/registration" ng-show="loggedInUser.firstname==undefined">Sign Up</a></li>
             <li><a href="#/login" ng-show="loggedInUser.firstname==undefined">Sign In</a></li>
+             <li><a href="#/profilepic" ng-show="loggedInUser.firstname">
+                    <img src="http://localhost:8082//Project2Middleware/getprofilepic/{{loggedInUser.email}}" alt="upload Picture" width="30px" height="30px" class="img-rounded">
+                 <li><a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined">Sign out</a></li>
+                    </a></li>
+            
           
 </ul>
 
@@ -69,10 +89,10 @@
 <script type="text/javascript" src="Js/UserService.js"></script>
 <script type="text/javascript" src="Controllers/jobcontroller.js"></script>
 <script type="text/javascript" src="Js/JobService.js"></script>
-
-
-
-
+<script type="text/javascript" src="Controllers/blogpostcontroller.js"></script>
+<script type="text/javascript" src="Js/BlogService.js"></script>
+<script type="text/javascript" src="Controllers/friendcontroller.js"></script>
+<script type="text/javascript" src="Js/FriendService.js"></script>
 
 
 </html>

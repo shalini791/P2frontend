@@ -1,0 +1,18 @@
+<div>
+<div class="panel-panel-default">
+<div class="panel panel-heading">Pending Requests</div>
+<div class="panel-body">
+<span ng-if="PendingRequest.length==0">No Pending Request</span>
+<ul style="list-style:none">
+<li ng-repeat="friendRequest in PendingRequest">
+{{friendRequest.fromId.email}}<br>
+{{friendRequest.fromId.firstname}}&nbsp;{{friendRequest.fromId.lastname}}<br>
+{{friendRequest.fromId.role}}<br>
+<img src="http://localhost:8082/Project2Middleware/getimage/{{friendRequest.fromId.email}}" height="60 px" width="60 px"> <br>
+<button class="btn btn-primary" ng-click="updateStatus(friendRequest,'A')">Accept the Request</button>
+<button class="btn btn-danger" ng-click="updateStatus(friendRequest,'D')">Delete the Request</button>
+</li>
+</ul>
+</div>
+</div>
+</div>

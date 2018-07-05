@@ -32,8 +32,44 @@ app.config(function($routeProvider){
 		controller:'JobCtrl',
 		templateUrl:'views/inactivejobslist.html'
 	})
-	.otherwise({
-		templateUrl:'views/home.html'
+	
+	.when('/addblog',{
+		controller:'BlogCtrl',
+		templateUrl:'views/blogform.html'
+	})
+	
+	.when('/blogsapproved',{
+			controller:'BlogCtrl',
+			templateUrl:'views/blog.html'
+	})
+				
+    .when('/blogsWaitingforapproval',{
+			controller:'BlogCtrl',
+			templateUrl:'views/blog.html'				
+     })
+     
+     .when('/profilepic',{
+		templateUrl:'views/uploadprofilepic.html'
+	})
+	
+				
+    .when('/suggestedusers',{
+			controller:'FriendCtrl',
+			templateUrl:'views/friendsuggestions.html'				
+     })
+     
+     .when('/pendingrequests',{
+			controller:'FriendCtrl',
+			templateUrl:'views/pendingrequest.html'				
+     })
+		
+     .when('/friends',{
+			controller:'FriendCtrl',
+			templateUrl:'views/friendslist.html'				
+     })
+		
+     .otherwise({
+		plateUrl:'views/home.html'
 	})
 })
 app.run(function($rootScope,$cookieStore,UserService,$location){
