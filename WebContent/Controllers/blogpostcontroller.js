@@ -28,7 +28,7 @@ app.controller('BlogCtrl',function($scope,BlogService,$location){
 	
 	
 	function blogswaitingForApproval(){
-		BlogServivce.blogsWaitingForApproval().then(
+		BlogServivce.blogswaitingForApproval().then(
 				function(response){
 					$scope.blogsWaitingforapproval=response.data
 					if(response.status==401)

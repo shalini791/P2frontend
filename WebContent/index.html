@@ -58,12 +58,13 @@
 				<li><a href="#/friend">Friends</a></li>	
 		     </ul></li>
 
+        <li><a href="#/chat" ng-show="loggedInUser.firstname">chat </a></li>
         
-          <li><a href="#/updateprofile" ng-show="loggedInUser.firstname!=undefined">Welcome {{loggedInUser.firstname}} &nbsp; {{loggedInUser.lastname}}</a></li>
+          <li><a href="#/updateprofile" ng-show="loggedInUser.firstname!=undefined">Welcome {{loggedInUser.firstname}}&nbsp;{{loggedInUser.lastname}}</a></li>
           <li><a href="#/registration" ng-show="loggedInUser.firstname==undefined">Sign Up</a></li>
             <li><a href="#/login" ng-show="loggedInUser.firstname==undefined">Sign In</a></li>
              <li><a href="#/profilepic" ng-show="loggedInUser.firstname">
-                    <img src="http://localhost:8082//Project2Middleware/getprofilepic/{{loggedInUser.email}}" alt="upload Picture" width="30px" height="30px" class="img-rounded">
+                    <img src="http://localhost:8082//Project2Middleware//getimage//{{loggedInUser.email}}" alt="upload Picture" width="30px" height="30px" class="img-rounded">
                  <li><a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined">Sign out</a></li>
                     </a></li>
             
@@ -78,6 +79,8 @@
 <div ng-view></div>
 
 </body>
+
+
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
 <script type="text/javascript"
@@ -94,5 +97,18 @@
 <script type="text/javascript" src="Controllers/friendcontroller.js"></script>
 <script type="text/javascript" src="Js/FriendService.js"></script>
 
+<script type="text/javascript" src="Js/chatservice.js"></script>
+<script type="text/javascript" src="Controllers/chatcontroller.js"></script>
+
+<script type="text/javascript" src="Js/sockjs/sockjs.min.js"></script>
+	<script type="text/javascript" src="Js/stomp/dist/stomp.min.js"></script>
 
 </html>
+
+
+<style>
+.body {
+    background-color: #42AEEC;
+    color: #fff;
+}		
+</style>
