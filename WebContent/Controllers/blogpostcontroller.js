@@ -24,16 +24,23 @@ app.controller('BlogCtrl',function($scope,BlogService,$location){
 		if(response.status==401)
 			$rootScope.error=response.data
 			$location.path('/login')
+			console.log(response.data)
 	})
 	
-	
-	function blogswaitingForApproval(){
-		BlogServivce.blogswaitingForApproval().then(
+	function blogsWait(){
+		BlogService.blogsWaitingforApproval().then(
 				function(response){
-					$scope.blogsWaitingforapproval=response.data
+					$scope.blogsWait=response.data
+				},function(response){
+	           		//$scope.error=response.data //ErrorClazz
+					console.log(response.data)
+					console.log(response.status)
+					
 					if(response.status==401)
 						$rootScope.error=response.data
 						$location.path('/login')
-					})
+					
+				})
 				}
+	blogsWait()
 	}

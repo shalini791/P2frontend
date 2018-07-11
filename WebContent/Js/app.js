@@ -43,7 +43,7 @@ app.config(function($routeProvider){
 			templateUrl:'views/blog.html'
 	})
 				
-    .when('/blogsWaitingforapproval',{
+    .when('/blogsWait',{
 			controller:'BlogCtrl',
 			templateUrl:'views/blog.html'				
      })

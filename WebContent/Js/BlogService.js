@@ -11,8 +11,8 @@ app.factory('BlogService',function($http){
 	blogService.blogsApproved=function(){
 		return $http.post("http://localhost:8082/Project2Middleware/blogsapproved")
 	}
-	blogService.blogswaitingForApproval=function(){
-		return $http.post("http://localhost:8082/Project2Middleware/blogsWaitingforapproval",blog)
+	blogService.blogsWaitingforApproval=function(){
+		return $http.post("http://localhost:8082/Project2Middleware/blogsWaitingforapproval")
 	}
 	return blogService;
 })
