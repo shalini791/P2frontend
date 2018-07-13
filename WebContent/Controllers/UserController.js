@@ -16,7 +16,7 @@ app.controller('UserCtrl',function($scope,UserService,$location,$rootScope,$cook
 	}
 	
 	$scope.login=function(user){
-		console.log(user)
+	console.log(user)
 		UserService.login(user).then(function(response){
 			//response.data ={email:"...",firstname:"..",lastname:"...",}
 			$rootScope.loggedInUser=response.data //loggedin User object
@@ -27,6 +27,8 @@ app.controller('UserCtrl',function($scope,UserService,$location,$rootScope,$cook
 			console.log(response.data)
 		})
 	}
+	    
+	
 	
 	$scope.updateProfile=function(user){
 		//updated user object

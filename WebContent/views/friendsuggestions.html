@@ -1,4 +1,4 @@
-<div class="panel panel-info">
+<!--  <div class="panel panel-info">
 <div class="panel-heading">Suggested Friends</div>
 <div class="panel-body">
 <ul style="list-style:none">
@@ -12,5 +12,43 @@
 <hr>
 </li>
 </ul>
+</div>
+</div>
+-->
+
+
+
+
+<div class="container">
+<div class="panel panel-warning">
+
+<div class="panel-heading">
+<h1 style="color:Black;font-family:Microsoft Sans Serif;">Suggested users</h1>
+</div>
+
+<div class="panel-body">
+<div class="row" ng-repeat="user in suggestedUsers">
+
+
+<div class="col-lg-4" style="margin-top:35px">
+{{user.firstname}}&nbsp{{user.lastname}}<br>
+{{user.email}}<br>
+{{user.role}}<br>
+<img src="http://localhost:8082/Project2Middleware/getimage/{{user.email}}" height="60 px" width="60 px"> 
+<hr style="margin-top:55px">
+</div>
+
+<div class="col-lg-4" style="margin-top:35px">
+<button class="btn btn-info" ng-click="sendFriendRequest(user)" data-toggle="modal" data-target="#SendfriendrequestModal">Send Friend Request</button>
+<hr style="margin-top:80px">
+</div>
+</div>
+
+
+</div>
+
+
+
+
 </div>
 </div>

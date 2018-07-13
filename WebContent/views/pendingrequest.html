@@ -1,4 +1,4 @@
-
+<!--  
 <div class="panel panel-info">
 <div class="panel-heading">Pending Request</div>
 <div class="panel-body">
@@ -13,5 +13,42 @@
 <button class="btn btn-danger" ng-click="updateStatus(friendRequest,'D')">Delete the Request</button>
 </li>
 </ul>
+</div>
+</div>
+-->
+
+
+
+<div class="container">
+<div class="panel panel-warning">
+
+<div class="panel-heading">
+<h1 style="color:Black;font-family:Microsoft Sans Serif;">Pending Request</h1>
+</div>
+
+<div class="panel-body">
+<span ng-if="PendingRequest.length==0">No Pending Request</span>
+<div class="row" ng-repeat="friendRequest in PendingRequest">
+
+
+<div class="col-lg-4" style="margin-top:35px">
+{{friendRequest.fromId.firstname}}&nbsp{{friendRequest.fromId.lastname}}<br>
+{{friendRequest.fromId.email}}<br>
+{{friendRequest.fromId.role}}<br>
+<img src="http://localhost:8082/Project2Middleware/getimage/{{friendRequest.fromId.email}}" height="60 px" width="60 px"> 
+<hr style="margin-top:55px">
+</div>
+
+<div class="col-lg-4" style="margin-top:35px">
+
+<button class="btn btn-primary" ng-click="updateStatus(friendRequest,'A')">Accept the Request</button>
+<button class="btn btn-danger" ng-click="updateStatus(friendRequest,'D')">Delete the Request</button>
+
+<hr style="margin-top:80px">
+</div>
+</div>
+
+
+</div>
 </div>
 </div>

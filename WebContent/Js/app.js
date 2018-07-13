@@ -38,6 +38,8 @@ app.config(function($routeProvider){
 		templateUrl:'views/blogform.html'
 	})
 	
+//	.when('/Postblog',{controller:'Blogctrl',templateUrl:'views/Writeblog.html'})
+	
 	.when('/blogsapproved',{
 			controller:'BlogCtrl',
 			templateUrl:'views/blog.html'

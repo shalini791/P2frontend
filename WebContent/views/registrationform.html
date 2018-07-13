@@ -1,312 +1,44 @@
- <div class="container">
- 
-			<div class="row main">
-				<div class="panel-heading">
-	               <div class="panel-title text-center">
-	               		<h3 class="title">REGISTRATION</h3>
-	               		<hr />
-	               	</div>
-	            </div> 
-	<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">	 
-		 
-		  <table>
-	  <div class="form-group">
-	      <div class="row">      
-           <div class="col-md-4 col-sm-4 col-lg-4">
-           <tr>
-		<td>Enter email </td>
-		<td><input type="email" ng-model="user.email">
-		<span style="color:red">{{error.message}}</span>
-		</td>
-		</div>
-		</div>
-	</tr>
-
-	<tr>
-		<td>Enter password</td>
-		<td><input type="password" ng-model="user.password" required></td>
-	</tr>
-
-	<tr>
-		<td>Enter Firstname</td>
-		<td><input type="text" ng-model="user.firstname" required></td>
-	</tr>
-
-	<tr>
-		<td>Enter Lastname</td>
-		<td><input type="text" ng-model="user.lastname"></td>
-	</tr>
-
-	<tr>
-		<td>Enter Phonenumber</td>
-		<td><input type="phonenumber" ng-model="user.phonenumber"></td>
-	</tr>
-
-	<tr>
-		<td>Select Role</td>
-		<td>
-		<select ng-model="user.role">
-		<option value="STUDENT">Student
-		<option value="EMPLOYEE">Employee
-		<option value="ALUMNI">Alumni 
-	
-		</select>
-		</td>
-		
-	</tr>
-    <tr>
-    <td><input type="submit" value="Register" ng-click="register(user)"></td>
-    </tr>
-    </div>
-</table>
-
-<style>
-.register-form{
-    font-size: 16px;
-   left: 50%;
-    top: 50%;
-    position: absolute;
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    -moz-transform: translate3d(-50%, -50%, 0);
-    transform: translate3d(-50%, -50%, 0);
-}
-</style>
 
 
+<h1 style="color:Black;font-family:Microsoft Sans Serif;">Create a new Account </h1>
+
+<div class="col-lg-4" id="Signupform1"><!-- Column 4 Start -->
+<h3 style="font-family:Microsoft Sans Serif;margin-left:100px">User Details</h3>
+
+<div class="form-group">
+<input type="Text" class="form-control"   id="frstname" ng-model="user.firstname" placeholder="First Name" required>
+</div>
+
+<div class="form-group">
+<input type="Text" class="form-control" id="lstname" ng-model="user.lastname" placeholder="Last Name" required>
+</div>
 
 
-<!--<div class="container">
-			<div class="row main">
-				<div class="panel-heading">
-	               <div class="panel-title text-center">
-	               		<h1 class="title">REGISTRATION</h1>
-	               		<hr />
-	               	</div>
-	            </div> 
-				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
-						
-						<div class="form-group">
-							<label for="firstname" class="cols-sm-2 control-label">First Name</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="firstname" id="firstname"  placeholder="Enter your FirstName"/>
-								</div>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label for="lastname" class="cols-sm-2 control-label">Last Name</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="lastname" id="lastname"  placeholder="Enter your lastName"/>
-								</div>
-							</div>
-						</div>
+<div class="form-group">
+<input type="email" class="form-control" ng-model="user.email" placeholder="Username/Email" required>
+<span style="color:red">{{error.message}}</span>
+</div>
 
-						<div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Your Email</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
-								</div>
-							</div>
-						</div>
+<div class="form-group">
+<input type="password" class="form-control" ng-model="user.password" placeholder="password" required>
+</div>
 
-						
+<div class="form-group">
+<input type="tel" class="form-control" id="mobileno" ng-model="user.phonenumber" placeholder="Mobile Number" required>
+</div>
 
-						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
-								</div>
-							</div>
-						</div>
+<div class="form-group">
+<label>Select Role</label>
+<select class="form-control" ng-model="user.role" required>
+<option value="ALUMNI">Alumni</option>
+<option value="STUDENT">Student</option>
+<option value="EMPLOYEE">Employee</option>
+</select>
+</div>
 
-						
+<div class="form-group">  
+<button class="btn btn-primary" ng-click="register(user)">Register</button>
+</div>
 
-						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
-						</div>
-						<div class="login-register">
-				            <a href="index.php">Login</a>
-				         </div>
-					</form>
-				</div>
-			</div>
-		</div>
-		
-		
-		
-		other
-		
-		
-		<div class="card bg-light">
-<article class="card-body mx-auto" style="max-width: 400px;">
-	<h4 class="card-title mt-3 text-center">Create Account</h4>
-	<p class="text-center">Get started with your free account</p>
-	<p>
-		<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-		<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
-	</p>
-	<p class="divider-text">
-        <span class="bg-light">OR</span>
-    </p>
-	<form>
-	<div class="form-group input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-		 </div>
-        <input name="" class="form-control" placeholder="Full name" type="text">
-    </div> 
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-		 </div>
-        <input name="" class="form-control" placeholder="Email address" type="email">
-    </div> 
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-		</div>
-		<select class="custom-select" style="max-width: 120px;">
-		    <option selected="">+971</option>
-		    <option value="1">+972</option>
-		    <option value="2">+198</option>
-		    <option value="3">+701</option>
-		</select>
-    	<input name="" class="form-control" placeholder="Phone number" type="text">
-    </div> 
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-		</div>
-		<select class="form-control">
-			<option selected=""> Select job type</option>
-			<option>Designer</option>
-			<option>Manager</option>
-			<option>Accaunting</option>
-		</select>
-	</div> 
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input class="form-control" placeholder="Create password" type="password">
-    </div> 
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input class="form-control" placeholder="Repeat password" type="password">
-    </div>                                       
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
-    </div>       
-    <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
-</form>
-</article>
-</div> 
+</div>
 
-</div> 
-
-		
-.divider-text {
-    position: relative;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.divider-text span {
-    padding: 7px;
-    font-size: 12px;
-    position: relative;   
-    z-index: 2;
-}
-.divider-text:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    border-bottom: 1px solid #ddd;
-    top: 55%;
-    left: 0;
-    z-index: 1;
-}
-
-.btn-facebook {
-    background-color: #405D9D;
-    color: #fff;
-}
-.btn-twitter {
-    background-color: #42AEEC;
-    color: #fff;
-}		
-		
-		-->
-		
-		<style>
-		.main{
- 	margin-top: 70px;
-}
-
-h1.title { 
-	font-size: 50px;
-	font-family: 'Passion One', cursive; 
-	font-weight: 400; 
-}
-
-hr{
-	width: 10%;
-	color: #fff;
-}
-
-.form-group{
-	margin-bottom: 20px;
-}
-
-label{
-	margin-bottom: 20px;
-}
-
-input,
-input::-webkit-input-placeholder {
-    font-size: 11px;
-    padding-top: 3px;
-}
-
-.main-login{
- 	background-color: #fff;
-    /* shadows and rounded borders */
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-
-}
-
-.main-center{
- 	margin-top: 30px;
- 	margin: 0 auto;
- 	max-width: 330px;
-    padding: 40px 40px;
-
-}
-
-.login-button{
-	margin-top: 5px;
-}
-
-.login-register{
-	font-size: 11px;
-	text-align: center;
-}
-		
-		</style>

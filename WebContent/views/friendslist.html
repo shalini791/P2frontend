@@ -1,4 +1,4 @@
-<div class="panel panel-info">
+<!--  <div class="panel panel-info">
 <div class="panel-heading">All Friends</div>
 <div class="panel-body">
 <span ng-if="friends.length==0">No Friends</span>
@@ -13,7 +13,35 @@
 </li>
 </ul>
 </div>
+</div> -->
+
+
+
+ <div class="container">
+<div class="panel panel-warning">
+
+<div class="panel-heading">
+<h1 style="color:Black;font-family:Microsoft Sans Serif;">All Friends</h1>
+</div>
+
+<div class="panel-body">
+<div class="row" ng-repeat="friend in friends">
+
+<div class="col-lg-4" style="margin-top:35px">
+{{friend.firstname}}&nbsp{{friend.lastname}}<br>
+{{friend.email}}<br>
+{{friend.role}}<br>
+<img src="http://localhost:8082/Project2Middleware/getimage/{{friend.email}}" height="60 px" width="60 px"> <br>
+<hr style="margin-top:55px">
 </div>
 
 
+<hr style="margin-top:80px">
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
 
