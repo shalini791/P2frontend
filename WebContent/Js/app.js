@@ -38,18 +38,19 @@ app.config(function($routeProvider){
 		templateUrl:'views/blogform.html'
 	})
 	
-//	.when('/Postblog',{controller:'Blogctrl',templateUrl:'views/Writeblog.html'})
+	.when('/Postblog',{controller:'BlogCtrl',templateUrl:'views/Writeblog.html'})
 	
-	.when('/blogsapproved',{
-			controller:'BlogCtrl',
-			templateUrl:'views/blog.html'
-	})
-				
-    .when('/blogsWait',{
-			controller:'BlogCtrl',
-			templateUrl:'views/blog.html'				
-     })
-     
+	.when('/Getblogsapproved',{
+		controller:'BlogCtrl',
+		templateUrl:'views/Viewblogsapproved.html'
+			})
+		
+		
+	.when('/Getblogswaitingapproval',
+		{controller:'BlogCtrl',templateUrl:'views/Viewblogswaitingapproval.html'})
+	
+		
+		
      .when('/profilepic',{
 		templateUrl:'views/uploadprofilepic.html'
 	})

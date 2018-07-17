@@ -1,17 +1,4 @@
-   <div class="panel panel-info">
-<div class="panel-heading"><h5>List of Blogs Approved</h5></div>
-<div class="panel-body">
-<ul><li ng-repeat="blog in blogsWait">
-<b>Blog Title:</b>{{blog.blogTitle}}<br>
-<b>Posted On:</b>{{blog.postedOn}}<br>
-<b>Posted By:</b>{{blog.postedBy}}
-</ul>
-</div>
-</div>
-
-
-
- <!-- <div class="container">
+<div class="container">
 <div class="panel panel-warning">
 
 <div class="panel-heading">
@@ -20,11 +7,11 @@
 
 <div class="panel-body">
 <ul style="list-style: none">
-<li ng-repeat="blog in blogsWait">
-<div class="row">
+<li ng-repeat="blog in Getblogswaitingapproval">
+ <div class="row">
 <div class="col-lg-8">
 <h3>{{blog.blogTitle}}</h3>
-<label>{{blog.postedBy.firstName}}&nbsp{{blog.postedBy.lastName}}&nbsp&nbsp{{blog.postedOn | date:'medium'}}</label><br>
+<label>{{blog.postedBy.firstname}}&nbsp{{blog.postedBy.lastname}}&nbsp&nbsp{{blog.postedOn | date:'medium'}}</label><br>
 {{blog.blogContent | limitTo: 500}}<span ng-show="blog.blogContent.length>500"><a href="" ng-click="Showmoreblogcontent(blog.id)" ng-hide="isClicked && id==blog.id">Read More</a></span>
 <span ng-show="isClicked && id==blog.id">
 {{blog.blogContent | limitTo: blog.blogContent.length : 500 }}
@@ -34,7 +21,7 @@
 <hr>
 </div>
 
-<div class="col-lg-2">
+ <div class="col-lg-2">
 <a><span class="glyphicon glyphicon-trash" style="color:red;font-size:25px"></span></a>
 </div>
 
@@ -45,8 +32,8 @@
 </li>
 </ul>
 
+
 </div>
 
 </div>
 </div>
--->

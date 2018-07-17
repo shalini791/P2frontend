@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -8,11 +8,12 @@
    
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     
+    <link href="resources/css/index.css" rel="stylesheet">
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
-	rel="stylesheet" />
+	rel="stylesheet"/>
 
 </head>
 <body ng-app="app">              
@@ -45,9 +46,9 @@
 			<li class="dropdown"><a href="" class="dropdown-toggle"
 		data-toggle="dropdown" ng-show="loggedInUser.firstname!=undefined">Blog<b class="caret"></b></a>
 			<ul class="dropdown-menu">
-				<li><a href="#/addblog">Post Blog</a></li>
-				<li><a href="#/blogsapproved">All Blogs</a></li>
-				<li><a href="#/blogsWait" ng-show="loggedInUser.role=='ADMIN'">Blogs waiting For Approval</a>		
+				<li><a href="#/Postblog">Post Blog</a></li>       <!--  "#/addblog">Post Blog</a></li>-->
+				<li><a href="#/Getblogsapproved">View All Blogs</a></li><!--  "#/blogsapproved">All Blogs</a></li>-->
+				<li><a href="#/Getblogswaitingapproval" ng-show="loggedInUser.role=='ADMIN'">Blogs waiting For Approval</a>		
 		     </ul></li>
 
 <li class="dropdown"><a href="" class="dropdown-toggle"
@@ -63,9 +64,9 @@
           <li><a href="#/updateprofile" ng-show="loggedInUser.firstname!=undefined">Welcome {{loggedInUser.firstname}}&nbsp;{{loggedInUser.lastname}}</a></li>
           <li><a href="#/registration" ng-show="loggedInUser.firstname==undefined">Sign Up</a></li>
             <li><a href="#/login" ng-show="loggedInUser.firstname==undefined">Sign In</a></li>
-             <li><a href="#/profilepic" ng-show="loggedInUser.firstname">
+             <li><a href="#/profilepic" ng-show="loggedInUser.firstname!==undefined">
                     <img src="http://localhost:8082//Project2Middleware//getimage//{{loggedInUser.email}}" alt="upload Picture" width="30px" height="30px" class="img-rounded">
-                 <li><a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined">Sign out</a></li>
+                 <li><a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined">Log out</a></li>
                     </a></li>
             
           
@@ -81,6 +82,12 @@
 </body>
 
 
+<style>
+.body{
+background-color:#79B8B2
+}
+</style>
+
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
 <script type="text/javascript"
@@ -92,8 +99,8 @@
 <script type="text/javascript" src="Js/UserService.js"></script>
 <script type="text/javascript" src="Controllers/jobcontroller.js"></script>
 <script type="text/javascript" src="Js/JobService.js"></script>
-<script type="text/javascript" src="Controllers/blogpostcontroller.js"></script>
-<script type="text/javascript" src="Js/BlogService.js"></script>
+<script type="text/javascript" src="Controllers/BlogController.js"></script>
+<script type="text/javascript" src="Js/blogsservice.js"></script>
 <script type="text/javascript" src="Controllers/friendcontroller.js"></script>
 <script type="text/javascript" src="Js/FriendService.js"></script>
 

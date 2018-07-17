@@ -21,6 +21,7 @@ app.controller('JobCtrl',function($scope,JobService,$location,$rootScope){
 	
 	function getActiveJobs(){//select * from job where active=true
 		JobService.getActiveJobs().then(function(response){
+			console.log("In Job Controller getactivejobs function is invoked")
 			//response.data is Array of Active jobs[{... active=true},{...,active=true}] for success
 			$scope.activeJobs=response.data
 		},function(response){

@@ -1,0 +1,48 @@
+</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="panel panel-warning">
+<div class="panel-heading">
+<h1 style="color:Black;font-family:Microsoft Sans Serif;">All Blogs</h1>
+</div>
+
+<div class="panel-body">
+
+<ul style="list-style: none">
+<li ng-repeat="blog in Getapprovedblogs">
+<label>Posted By:</label>&nbsp{{blog.postedBy.firstname}}&nbsp{{blog.postedBy.lastname}}<br>
+<label>Blog Title:</label>&nbsp<h3>{{blog.blogTitle}}</h3><br>
+{{blog.blogContent | limitTo: 1017 }}<span ng-show="blog.blogContent.length>1017"><a href="" ng-click="Showmoreblogcontent(blog.id)" ng-hide="isClicked && id==blog.id">Read More</a></span>
+<span ng-show="isClicked && id==blog.id">
+{{blog.blogContent | limitTo: blog.blogContent.length : 1017 }}
+</span>
+<a href="" ng-click="Showmoreblogcontent(blog.id)" ng-show="isClicked && id==blog.id">Hide Content</a>
+<br>
+<a href=""><span class="glyphicon glyphicon-thumbs-up" ng-click="Likedislike(blog.id)"   ng-class="isLiked ? 'OnLiked' :'Default'" style="font-size:25px;"></span></a>&nbsp&nbsp{{blog.likes}}&nbspLikes
+<br>
+<textarea class="form-control" rows="3" cols="7"  placeholder="Write Comment" ng-model="commenttxt"></textarea>
+<br>
+<button class="btn btn-info" id="Postcommentbtn" ng-click="Postcomments(commenttxt,blog.id)">Post Comment</button>
+<h4>Comments</h4>
+
+<div class="well well-sm" ng-repeat="allblogcomments in Allblogcomments | orderBy: '-commentedOn' " ng-show="allblogcomments.blogPost.id==blog.id">
+<img  src="http://localhost:8082/Project2Middleware/getimage/{{allblogcomments.commentedBy.email}}" onerror="this.src='Resources/Images/User-Profile-Img.jpg'" class="img-circle"  style="width:50px;height:50px"><label>&nbspPosted By</label>&nbsp{{allblogcomments.commentedBy.firstname}}&nbsp{{allblogcomments.commentedBy.lastname}}<br>
+{{allblogcomments.commentTxt}}
+</div>
+<hr>
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+
+ 
+
+
+ 
