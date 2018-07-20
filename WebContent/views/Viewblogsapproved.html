@@ -29,7 +29,7 @@
 <h4>Comments</h4>
 
 <div class="well well-sm" ng-repeat="allblogcomments in Allblogcomments | orderBy: '-commentedOn' " ng-show="allblogcomments.blogPost.id==blog.id">
-<img  src="http://localhost:8082/Project2Middleware/getimage/{{allblogcomments.commentedBy.email}}" onerror="this.src='Resources/Images/User-Profile-Img.jpg'" class="img-circle"  style="width:50px;height:50px"><label>&nbspPosted By</label>&nbsp{{allblogcomments.commentedBy.firstname}}&nbsp{{allblogcomments.commentedBy.lastname}}<br>
+<img  src="http://localhost:8082/Project2Middleware/getimage/{{allblogcomments.commentedBy.email}}" onerror="this.src='resources/images/User-Profile-Img.jpg'" class="img-circle"  style="width:50px;height:50px"><label>&nbspPosted By</label>&nbsp{{allblogcomments.commentedBy.firstname}}&nbsp{{allblogcomments.commentedBy.lastname}}<br>
 {{allblogcomments.commentTxt}}
 </div>
 <hr>

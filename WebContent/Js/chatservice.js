@@ -1,6 +1,3 @@
-/**
- * 
- */
 //This filter is used to display chat messages in reverse order ie from last index to 0 , latest message first
 app.filter('reverse', function() {
 	  return function(items) {
@@ -18,7 +15,7 @@ app.filter('reverse', function() {
 
 	app.factory('ChatService', function($rootScope) {
 	  alert('app factory')
-	    var socket = new SockJS('/project2middleware/chatmodule');
+	    var socket = new SockJS('/Project2Middleware/chatmodule');
 	    var stompClient = Stomp.over(socket);
 	    stompClient.connect('', '', function(frame) {
 	      $rootScope.$broadcast('sockConnected', frame);
