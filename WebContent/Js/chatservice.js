@@ -14,7 +14,7 @@ app.filter('reverse', function() {
 	});
 
 	app.factory('ChatService', function($rootScope) {
-	  alert('app factory')
+	  /*alert('app factory')*/
 	    var socket = new SockJS('/Project2Middleware/chatmodule');
 	    var stompClient = Stomp.over(socket);
 	    stompClient.connect('', '', function(frame) {

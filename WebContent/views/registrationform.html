@@ -1,10 +1,26 @@
+<style>
+
+.imgs{
+margin-top:90px;
+body
+{
+background:url("resources/images/img13.jpg")
+}
+
+}
+
+</style>
 
 
-<h1 style="color:Black;font-family:Microsoft Sans Serif;">Create a new Account </h1>
+<div class="container">
 
-<div class="col-lg-4" id="Signupform1"><!-- Column 4 Start -->
-<h3 style="font-family:Microsoft Sans Serif;margin-left:100px">User Details</h3>
+<div class= "row">
+<div class= "col-md-6">
+<h1 style="color:Black;font-family:Microsoft Sans Serif;text-align:center;">Create a new Account </h1>
 
+<div  id="Signupform1"><!-- Column 4 Start -->
+<h3 style="font-family:Microsoft Sans Serif;>User Details</h3>
+</div>
 <div class="form-group">
 <input type="Text" class="form-control"   id="frstname" ng-model="user.firstname" placeholder="First Name" required>
 </div>
@@ -39,6 +55,16 @@
 <div class="form-group">  
 <button class="btn btn-primary" ng-click="register(user)">Register</button>
 </div>
+</div>
+
+<div class="imgs">
+<div class="col-md-4 col-md-offset-1" >
+<img src="resources/images/user-profile-img.png" height=350px; width=350px;>
+</div>
+</div>
+</div>
+
 
 </div>
+
 

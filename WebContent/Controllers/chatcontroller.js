@@ -144,12 +144,12 @@ $scope.addChat = function(chat) {
 
 
 app.controller('ChatCtrl',  function($rootScope ,$scope, ChatService) {
-    alert('entering chat controller')
+   /* alert('entering chat controller')*/
     $scope.chats = [];
     $scope.stompClient = ChatService.stompClient;
     $scope.users=[]
     $scope.$on('sockConnected', function(event, frame) {
-    	alert('sockconnected')
+    	/*alert('sockconnected')*/
         $scope.userName=$rootScope.loggedInUser.firstname;
         $scope.stompClient.subscribe("/topic/join", function(message) {
             user = JSON.parse(message.body);
@@ -167,8 +167,8 @@ app.controller('ChatCtrl',  function($rootScope ,$scope, ChatService) {
         
   
         $scope.stompClient.subscribe('/app/join/'+$scope.userName, function(message) {
-            alert(message)
-	    alert(message.body)
+            /*alert(message)
+	    alert(message.body)*/
             $scope.users = JSON.parse(message.body);
         	
             $scope.$apply();
