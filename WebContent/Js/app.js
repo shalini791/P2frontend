@@ -93,7 +93,7 @@ app.run(function($rootScope,$cookieStore,UserService,$location){
 			$location.path('/login')
 		},function(response){
 			$rootScope.error=response.data //ErrorClazz object returned from middleware
-			$location.path('/home')
+			$location.path('/login')
 		})
 	}	
 })
