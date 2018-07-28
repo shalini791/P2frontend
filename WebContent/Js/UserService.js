@@ -14,7 +14,7 @@ app.factory('UserService',function($http){
 	}
 	
 	userService.logout=function(){
-		return $http.put("http://localhost:8082/Project2Middleware/logout")
+		return $http.get("http://localhost:8082/Project2Middleware/logout")
 	}
      
 	userService.updateProfile=function(user){//updated user profile
