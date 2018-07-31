@@ -38,6 +38,9 @@ app.controller('FriendCtrl',function($scope,FriendService,$location,$rootScope){
 	    
 	    $scope.updateStatus=function(friendRequest,updatedStatus){
 	    	friendRequest.status=updatedStatus;
+	    	console.log(friendRequest.id)	;
+	    	console.log(friendRequest.status)	;
+	    	
 	    	FriendService.updateStatus(friendRequest).then(
 	    			function(response){
 	    				getPendingrequest()
@@ -47,7 +50,7 @@ app.controller('FriendCtrl',function($scope,FriendService,$location,$rootScope){
 	    					$location.path('/login')
 	    			})
 	   }
-
+	
     function getAllFriends(){
       FriendService.getAllFriends().then(
       function(response){
@@ -59,13 +62,25 @@ app.controller('FriendCtrl',function($scope,FriendService,$location,$rootScope){
       
       })	
     }
-    getAllFriends()
-})
+   
 
 
-
+$scope.unFriend=function(friend){
+	console.log("In Friend controller Unfriend function")	;
+	console.log(friend.id)	;
+	    	FriendService.unFriend(friend).then(
+	    			function(response){
+	    				getAllFriends()
+	    			},function(response){
+	    	    		$scope.error=response.data
+	    				if(response.status==401)
+	    					$location.path('/login')
+	    			})
+	   }
 
 				
 					
 				
-		
+getAllFriends()
+
+})

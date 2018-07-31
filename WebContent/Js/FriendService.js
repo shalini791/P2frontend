@@ -20,6 +20,10 @@ app.factory('FriendService',function($http){
 		return $http.put("http://localhost:8082/Project2Middleware/updatestatus",updatedFriendRequest)
 	}
 	
+	friendService.unFriend=function(friend){
+		return $http.put("http://localhost:8082/Project2Middleware/unfriend",friend)
+	}
+	
 
 	friendService.getAllFriends=function(){
 		return $http.get("http://localhost:8082/Project2Middleware/friend")

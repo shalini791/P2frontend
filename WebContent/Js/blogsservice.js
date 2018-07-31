@@ -17,6 +17,11 @@ console.log("In Blog service Updateblog function",id)
 return $http.get("http://localhost:8082/Project2Middleware/Approveblog/"+id)
 }
 
+blogservice.deleteBlog=function(id)
+{
+console.log("In Blog service deleteblog function",id)
+return $http.get("http://localhost:8082/Project2Middleware/Deleteblog/"+id)
+}
 
 blogservice.Getapprovedblogs=function()
 {

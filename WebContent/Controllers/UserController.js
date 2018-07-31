@@ -51,4 +51,3 @@ app.controller('UserCtrl',function($scope,UserService,$location,$rootScope,$cook
 	
 })
 
-

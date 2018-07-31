@@ -26,18 +26,29 @@
 
 <div class="panel-body">
 <div class="row" ng-repeat="friend in friends">
-
+<span ng-hide="friend.fromId.email==loggedInUser.email">
 <div class="col-lg-4" style="margin-top:35px">
-{{friend.firstname}}&nbsp{{friend.lastname}}<br>
-{{friend.email}}<br>
-{{friend.role}}<br>
-<img src="http://localhost:8082/Project2Middleware/getimage/{{friend.email}}" onerror="this.src='resources/images/User-Profile-Img.jpg'" height="60 px" width="60 px"> <br>
+{{friend.fromId.firstname}}&nbsp{{friend.fromId.lastname}}<br>
+{{friend.fromId.email}}<br>
+{{friend.fromId.role}}<br>
+<img src="http://localhost:8082/Project2Middleware/getimage/{{friend.fromId.email}}" onerror="this.src='resources/images/User-Profile-Img.jpg'" height="60 px" width="60 px"> <br>
 <hr style="margin-top:55px">
 </div>
-
-
+</span>
+<span ng-hide="friend.toId.email==loggedInUser.email">
+<div class="col-lg-4" style="margin-top:35px">
+{{friend.toId.firstname}}&nbsp{{friend.toId.lastname}}<br>
+{{friend.toId.email}}<br>
+{{friend.toId.role}}<br>
+<img src="http://localhost:8082/Project2Middleware/getimage/{{friend.toId.email}}" onerror="this.src='resources/images/User-Profile-Img.jpg'" height="60 px" width="60 px"> <br>
+<hr style="margin-top:55px">
+</div>
+</span>
+<div class="col-lg-4" style="margin-top:35px">
+<button class="btn btn-danger" ng-click="unFriend(friend)">Unfriend</button>
 <hr style="margin-top:80px">
 </div>
+
 </div>
 
 

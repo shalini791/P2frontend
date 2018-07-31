@@ -13,7 +13,8 @@
 
 <ul style="list-style: none">
 <li ng-repeat="blog in Getapprovedblogs">
-<label>Posted By:</label>&nbsp{{blog.postedBy.firstname}}&nbsp{{blog.postedBy.lastname}}<br>
+<label>Posted By:</label>&nbsp{{blog.postedBy.firstname}}&nbsp{{blog.postedBy.lastname}}&nbsp{{blog.postedBy.email}}&nbsp{{loggedInUser.email}}<br> 
+<a  ng-show="blog.postedBy.email==loggedInUser.email || loggedInUser.role=='ADMIN'" href="" ng-click="deleteBlog(blog.id)">delete</a>
 <label>Blog Title:</label>&nbsp<h3>{{blog.blogTitle}}</h3><br>
 {{blog.blogContent | limitTo: 1017 }}<span ng-show="blog.blogContent.length>1017"><a href="" ng-click="Showmoreblogcontent(blog.id)" ng-hide="isClicked && id==blog.id">Read More</a></span>
 <span ng-show="isClicked && id==blog.id">

@@ -44,6 +44,23 @@ if(response.status==401)
 })
 }
 
+$scope.deleteBlog=function(id)
+{
+console.log("In Blog Controller deleteBlog function")
+Blogservice.deleteBlog(id).then(function(response){
+console.log(response.data)
+console.log(response.status)
+$location.path('/Getblogsapproved')
+},
+function(response){
+console.log(response.data)
+console.log(response.status)	
+if(response.status==401)
+	{
+	$location.path('/login')
+	}
+})
+}
 
 
 
